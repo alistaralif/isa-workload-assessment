@@ -32,6 +32,7 @@ export async function POST(request) {
     const formattedTimestamp = new Date(timestamp)
       .toLocaleString("en-GB", {
         hour12: false,
+        timeZone: "Asia/Singapore",
       })
       .replace(",", "")
       .replace(/\//g, "-");
