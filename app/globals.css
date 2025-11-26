@@ -31,7 +31,8 @@ body {
   width: 100vw;
   /* max-width: 960px; */
   padding: 48px 64px 64px;
-  background: #03081b;
+  background: #2e3440;
+  /* background: #03081b; */
   border-radius: 0px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
 }
@@ -87,7 +88,8 @@ body {
   border-radius: 6px;
   border: none;
   text-align: center;
-  background: #020617;
+  background: #4c566a;
+  /* background: #020617; */
   color: #e5e7eb;
   cursor: pointer;
   /* transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease; */

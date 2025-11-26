@@ -18,8 +18,8 @@ export async function POST(request) {
 
     const timestamp = new Date().toISOString();
 
-    // const dataDir = path.join(process.cwd(), "data");
-    const dataDir = "/data";
+    // const dataDir = path.join(process.cwd(), "data");        // for local dev
+    const dataDir = "/data";                  // for deployed env
     const filePath = path.join(dataDir, "workload_log.csv");
 
     await fs.mkdir(dataDir, { recursive: true });
