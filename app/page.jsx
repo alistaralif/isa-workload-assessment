@@ -16,6 +16,22 @@ export default function HomePage() {
   // store participant username
   const [username, setUsername] = useState("");
 
+  const unlockAudio = () => {
+    const audio = new Audio("/silence.mp3");
+    audio.play().catch(() => {});
+  };
+
+  useEffect(() => {
+    const handler = () => {
+      unlockAudio();
+      window.removeEventListener("touchstart", handler);
+    };
+
+    window.addEventListener("touchstart", handler);
+
+    return () => window.removeEventListener("touchstart", handler);
+  }, []);
+
   // countdown logic
   useEffect(() => {
     if (secondsLeft <= 0) return;
