@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 
 const RATINGS = ["Very High", "High", "Fair", "Low", "Very Low"];
-const INTERVAL_SECONDS = 5 * 60; // 5 minutes
+const INTERVAL_SECONDS = 10; // 5 minutes
 
 export default function HomePage() {
   const [secondsLeft, setSecondsLeft] = useState(0);
@@ -84,8 +84,9 @@ export default function HomePage() {
   return (
     <main className="isa-root">
       {/* ding sound */}
-      <audio ref={dingRef} src="/ding.mp3" preload="auto" />
+      <audio ref={dingRef} src="/hotel-bell-ding.mp3" preload="auto" />
 
+      {showPromptNow ? 
       <div className="isa-card">
         <header className="isa-header">
           <h1>ISA Workload Assessment</h1>
@@ -116,7 +117,7 @@ export default function HomePage() {
           ))}
         </section>
 
-        <section className="isa-timer">
+        {/* <section className="isa-timer">
           {showPromptNow ? (
             <p className={`timer-main ${inputBlocked ? "" : "pulse-animation"}`}>
               Please rate your workload now.
@@ -128,8 +129,14 @@ export default function HomePage() {
           )}
 
           {error && <p className="error-text">{error}</p>}
-        </section>
+        </section> */}
       </div>
+    :
+      <div className="timer-display">
+        <p>{formatTime(secondsLeft)}</p>
+      </div>
+
+}
     </main>
   );
 }
