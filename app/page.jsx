@@ -66,6 +66,18 @@ export default function HomePage() {
   };
 
   const handleRatingClick = async (rating) => {
+
+    // Prime audio on first real user gesture (unlock audio on iOS)
+    if (dingRef.current) {
+      try {
+        await dingRef.current.play();
+        dingRef.current.pause();
+        dingRef.current.currentTime = 0;
+      } catch (err) {
+        // ignore
+      }
+    }
+
     if (inputBlocked) return; // extra protection
 
     setIsSaving(true);
