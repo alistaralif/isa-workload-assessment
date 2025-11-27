@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 
 const RATINGS = ["Very High", "High", "Fair", "Low", "Very Low"];
-const INTERVAL_SECONDS = 10; // 5 minutes
+const INTERVAL_SECONDS = 3 * 60; // 3 minutes
 
 export default function HomePage() {
   const [secondsLeft, setSecondsLeft] = useState(0);
