@@ -161,7 +161,7 @@ export default function HomePage() {
       </div>
     :
       <div className="timer-display">
-        <p>{formatTime(secondsLeft)}</p>
+        <p className="timer-countdown">{formatTime(secondsLeft)}</p>
       </div>
 
 }

@@ -128,28 +128,18 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
+  /* border: 1px solid red; */
   align-items: center;
   justify-content: center;
-  font-size: 200px;
-  font-weight: 600;
-  color: white;
+  font-size: 20px;
+  color: rgb(60, 60, 60);
   background: black;
+  position: relative;
 }
 
-.timer-main {
-  font-size: 18px;
-  margin: 0 0 8px;
-}
-
-.timer-main span {
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-}
-
-.timer-sub {
-  margin: 0;
-  font-size: 14px;
-  color: #9ca3af;
+.timer-countdown {
+  top: 90%;
+  position: absolute;
 }
 
 .error-text {
